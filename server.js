@@ -25,13 +25,8 @@ if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 }
 
-app.use(express.cookieSession({
-	key: "mysite.sid.uid.whatever",
-	secret: process.env["SESSION_SECRET"],
-	cookie: {
-	  maxAge: 2678400000 // 31 days
-	},
-  }));
+app.use(express.cookieParser('secret'));
+app.use(express.cookieSession());
 
 // API routes.
 app.use(routes);
