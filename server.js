@@ -37,7 +37,7 @@ app.get('*', function (req, res) {
 // error handling, last middleware.
 app.use((err, req, res, next) => errorHandler(err, req, res, next));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/passport', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user1:Doctor01%@ds063406.mlab.com:63406/heroku_ft7vxt7m', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true
